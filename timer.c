@@ -107,7 +107,7 @@ void timer_destroy(void)
 }
 
 
-/*
+/**
  * 检查闹钟任务是否有超时
  */
 static void sighandler(int signo)
