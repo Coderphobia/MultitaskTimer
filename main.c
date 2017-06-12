@@ -18,8 +18,7 @@ int main(void)
     }
 
     /* 安装中断信号处理函数 */
-    if (signal(SIGINT, sigintr_handler) == SIG_ERR)
-    {
+    if (signal(SIGINT, sigintr_handler) == SIG_ERR) {
         fprintf(stderr, "set SIGINT handler failed.\n");
         exit(2);
     }
@@ -28,8 +27,7 @@ int main(void)
     TimerId_t ids[3];
 
     ids[0] = timer_add(2,say_hello,NULL,LOOP);
-    if(ids[0] == ADD_FAILED)
-    {
+    if(ids[0] == ADD_FAILED) {
         fprintf(stderr, "add timer failed.\n");
         timer_destroy();
         return 2;
@@ -37,7 +35,6 @@ int main(void)
 
     int value = 555;
     ids[1] = timer_add(5, print_value, &value, ONCE);
-
     ids[2] = timer_add(3, print_rectangle, NULL, LOOP);
 
     /* 删除第0个任务 */
